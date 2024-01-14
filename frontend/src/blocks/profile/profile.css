@@ -1,0 +1,35 @@
+.profile {
+  display: flex;
+  margin-top: 36.25px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 880px;
+  min-height: 120px;
+}
+
+@media screen and (max-width: 1024px) {
+  .profile {
+    max-width: 760px;
+  }
+}
+
+@media screen and (max-width: 796px) {
+  .profile {
+    max-width: 570px;
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .profile {
+    max-width: 400px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .profile {
+    margin-top: 38.25px;
+    max-width: 282px;
+    max-height: 287px;
+  }
+}

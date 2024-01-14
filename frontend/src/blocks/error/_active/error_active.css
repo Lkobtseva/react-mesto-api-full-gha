@@ -1,0 +1,9 @@
+.error_active{
+    height: 12px;
+    flex-shrink: 0;
+    color: #F00;
+    font-size: 12px;
+    margin-bottom: 13px;
+    margin-left: 36px;
+    margin-top: -25px;
+  }

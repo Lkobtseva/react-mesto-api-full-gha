@@ -1,0 +1,9 @@
+.card__like-container {
+    display: flex;
+    height: 40px;
+    margin-top: 20px;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 6px;
+    margin-right: 20px;
+  }

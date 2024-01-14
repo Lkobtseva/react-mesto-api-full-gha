@@ -1,0 +1,24 @@
+.profile__edit {
+  flex-direction: row;
+  display: flex;
+  margin-right: auto;
+  margin-left: auto;
+  min-width: 350px;
+}
+@media screen and (max-width: 600px) {
+  .profile__edit {
+    min-width: 220px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .profile__edit {
+    margin-left: 0;
+  }
+}
+
+@media screen and (max-width: 440px) {
+  .profile__edit {
+    margin-left: auto;
+  }
+}

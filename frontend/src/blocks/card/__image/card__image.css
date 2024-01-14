@@ -1,0 +1,19 @@
+.card__image {
+  max-width: 282px;
+  min-height: 282px;
+  margin-bottom: 0;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  object-fit: cover;
+}
+
+.card__image:hover {
+  cursor: pointer;
+}
+
+@media screen and (max-width: 902px) {
+  .card__image {
+    width: 100%;
+  }
+}
+

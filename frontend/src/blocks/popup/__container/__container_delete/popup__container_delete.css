@@ -1,0 +1,15 @@
+.popup__container_delete{
+    width: 430px;
+    max-height: 181px;
+}
+.popup__title_delete{
+    text-align: left;
+}
+.popup__form_type_delete-card{
+    padding-top: 0;
+}
+@media screen and (max-width: 550px) {
+    .popup__container_delete{
+        max-width: 282px;
+    }
+}

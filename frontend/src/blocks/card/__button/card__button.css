@@ -1,0 +1,29 @@
+.card__button {
+  background-image: url(../../../images/heart.svg);
+  background-repeat: no-repeat;
+  height: 19px;
+  width: 25px;
+  /*margin-right: 20px;*/
+  margin-left: auto;
+  /*top: 32px;*/
+  position: relative;
+  border: none;
+  background-color: white;
+  z-index: 0;
+  max-height: 19px;
+  min-width: 25px;
+}
+
+.card__button:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.card__button_active {
+  background-image: url(../../../images/Union.svg);
+  opacity: 1;
+}
+.card__button_active:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}

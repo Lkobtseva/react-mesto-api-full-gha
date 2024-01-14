@@ -1,0 +1,27 @@
+.profile__edit-avatar {
+    height: 120px;
+    width: 120px;
+    position: relative;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-top: 0.5px;
+    padding: 0;
+    bottom: 103.5%;
+    z-index: 2;
+    opacity: 0;
+    border: 0;
+}
+
+@media screen and (min-width: 768px) {
+    .profile__edit-avatar {
+        bottom: 103%;
+    }
+}
+
+.profile__edit-avatar:hover {
+    opacity: 0.8;
+    background-color: rgba(0, 0, 0);
+    background-image: url(../../../images/AvatarButton.svg);
+}

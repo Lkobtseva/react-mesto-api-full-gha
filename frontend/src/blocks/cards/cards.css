@@ -1,0 +1,28 @@
+.cards {
+    margin-top: 55px;
+    max-width: 880px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  @media screen and (max-width: 902px) {
+    .cards {
+      max-width: 585px;
+    }
+  }
+  
+  @media screen and (max-width: 797px) {
+    .cards {
+      margin-top: 0;
+      max-width: 282px;
+    }
+  }
+  
+  @media screen and (max-width: 320px) {
+    .cards {
+      margin-top: 36px;
+      margin-left: 19px;
+      margin-right: 19px;
+    }
+  }
+  
