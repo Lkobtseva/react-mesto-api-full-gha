@@ -16,8 +16,6 @@ const app = express();
 
 app.use(cors());
 app.use(bodyParser.json());
-//const { validationCreateUser, validationLogin } = require('./middlewares/validation');
-//const { createUsers, login } = require('./controllers/auth');
 
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000,
@@ -69,6 +67,7 @@ app.use((err, req, res, next) => {
       : message,
   });
   next();
-});
+})
 
 connect();
+
