@@ -1,15 +1,16 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+const BadRequestError = require('../errors/badRequestError');
+const NotFoundError = require('../errors/notFoundError');
+const ConflictError = require('../errors/conflictError');
+
 const { Joi } = require('celebrate');
 const http2 = require('node:http2');
 const User = require('../models/user');
 const { joiIsUrlValid } = require('../utils/isUrlValid');
 const { NODE_ENV, JWT_SECRET } = process.env;
 const { HTTP_STATUS_CREATED, HTTP_STATUS_OK } = http2.constants;
-const BadRequestError = require('../errors/badRequestError');
-const NotFoundError = require('../errors/notFoundError');
-const ConflictError = require('../errors/conflictError');
 
 module.exports.celebrateParams = {
   name: Joi.string().min(2).max(30),
