@@ -8,7 +8,7 @@ const usersRouter = require('./users');
 const cardsRouter = require('./cards');
 const NotFoundError = require('../errors/notFoundError');
 const errorHandler = require('../middlewares/errorHadler');
-const corsHandler = require('../middlewares/corsHandler');
+const corsHandler = require('../middlewares/corsErr');
 
 const {
   name,
