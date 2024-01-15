@@ -2,7 +2,7 @@ const http2 = require('node:http2');
 
 const { HTTP_STATUS_CONFLICT } = http2.constants;
 
-class conflictError extends Error {
+class ConflictError extends Error {
   constructor(message) {
     super(message);
     this.name = 'ConflictError';
@@ -10,4 +10,4 @@ class conflictError extends Error {
   }
 }
 
-module.exports = conflictError;
+module.exports = ConflictError;
