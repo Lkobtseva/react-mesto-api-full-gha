@@ -1,23 +1,34 @@
-const userRoutes = require('express').Router();
-
-const {
-  validationUpdateUser,
-  validationUpdateAvatar,
-  validationUserId,
-} = require('../middlewares/validation');
-
+const usersRouter = require('express').Router();
+const { Joi, celebrate } = require('celebrate');
 const {
   getUsers,
-  getUserById,
-  updateUser,
-  updateAvatar,
-  getCurrentUser,
+  getUserId,
+  updateUserInfo,
+  updateUserAvatar,
+  getUserInfo,
+  celebrateParams,
 } = require('../controllers/users');
 
-userRoutes.get('/', getUsers);
-userRoutes.get('/me', getCurrentUser);
-userRoutes.get('/:userId', validationUserId, getUserById);
-userRoutes.patch('/me', validationUpdateUser, updateUser);
-userRoutes.patch('/me/avatar', validationUpdateAvatar, updateAvatar);
+const {
+  name,
+  about,
+  avatar,
+} = celebrateParams;
 
-module.exports = userRoutes;
+usersRouter.get('/', getUsers);
+usersRouter.get('/me', getUserInfo);
+usersRouter.get('/:userId', celebrate({
+  params: Joi.object().keys({
+    userId: Joi.string().hex().length(24).required(),
+  }),
+}), getUserId);
+usersRouter.patch('/me', celebrate({
+  body: Joi.object().keys({
+    name: name.required(), about: about.required(),
+  }),
+}), updateUserInfo);
+usersRouter.patch('/me/avatar', celebrate({
+  body: Joi.object().keys({ avatar: avatar.required() }),
+}), updateUserAvatar);
+
+module.exports = usersRouter;

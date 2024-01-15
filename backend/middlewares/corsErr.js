@@ -1,4 +1,4 @@
-/*const allowedCors = [
+const allowedCors = [
   'domainname.students.nomoredomains.club',
   'domainname.students.nomoredomains.club',
 ];
@@ -21,4 +21,4 @@ module.exports = (req, res, next) => {
   }
 
   return next();
-};*/
+};

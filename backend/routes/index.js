@@ -1,21 +1,46 @@
-const router = require('express').Router();
-//const express = require('express');
-//router.use(express.json());
-
-const cardsRouter = require('./cards');
-const usersRouter = require('./users');
-const NotFound = require('../errors/NotFound');
+const bodyParser = require('body-parser');
+const { celebrate, Joi, errors } = require('celebrate');
+const appRouter = require('express').Router();
+const { login, createUser, celebrateParams } = require('../controllers/users');
 const auth = require('../middlewares/auth');
-const { createUser, login } = require('../controllers/users');
-const { loginValidation, createUserValidation } = require('../middlewares/validationJoi');
+const { requestLogger, errorLogger } = require('../middlewares/logger');
+const usersRouter = require('./users');
+const cardsRouter = require('./cards');
+const NotFoundError = require('../errors/notFoundError');
+const errorHandler = require('../middlewares/errorHadler');
+const corsHandler = require('../middlewares/corsHandler');
 
-routes.post('/signin', loginValidation, login);
-routes.post('/signup', createUserValidation, createUser);
+const {
+  name,
+  about,
+  avatar,
+  email,
+  password,
+} = celebrateParams;
 
-router.use('/cards', auth,  cardsRouter);
-router.use('/users', auth, usersRouter);
-router.use((req, res, next) => {
-  next(new NotFound('Такой страницы не существует'));
+appRouter.use(requestLogger); // подключаем логгер запросов
+appRouter.use(corsHandler);
+appRouter.use(bodyParser.json());
+appRouter.get('/crash-test', () => {
+  setTimeout(() => {
+    throw new Error('Сервер сейчас упадёт');
+  }, 0);
 });
+appRouter.post('/signin', celebrate({
+  body: Joi.object().keys({
+    email, password,
+  }),
+}), login);
+appRouter.post('/signup', celebrate({
+  body: Joi.object().keys({
+    name, about, avatar, email, password,
+  }),
+}), createUser);
+appRouter.use('/users', auth, usersRouter);
+appRouter.use('/cards', auth, cardsRouter);
+appRouter.use('*', (req, res, next) => { next(new NotFoundError('Страница не найдена')); });
+appRouter.use(errorLogger); // подключаем логгер ошибок
+appRouter.use(errors());
+appRouter.use(errorHandler);
 
-module.exports = router;
+module.exports = appRouter;

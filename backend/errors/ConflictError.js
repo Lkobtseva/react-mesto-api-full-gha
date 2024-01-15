@@ -1,7 +1,13 @@
+const http2 = require('node:http2');
+
+const { HTTP_STATUS_CONFLICT } = http2.constants;
+
 class ConflictError extends Error {
   constructor(message) {
     super(message);
-    this.statusCode = 409;
+    this.name = 'ConflictError';
+    this.statusCode = HTTP_STATUS_CONFLICT;
   }
 }
+
 module.exports = ConflictError;
