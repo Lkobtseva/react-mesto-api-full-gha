@@ -1,6 +1,6 @@
 const allowedCors = [
-  'https://lkobtseva.nomoredomainsmonster.ru/sign-up',
-  'http://lkobtseva.nomoredomainsmonster.ru/sign-up',
+  'https://lkobtseva.nomoredomainsmonster.ru',
+  'http://lkobtseva.nomoredomainsmonster.ru',
   'https://praktikum.tk',
   'http://praktikum.tk',
   'localhost:3000',
