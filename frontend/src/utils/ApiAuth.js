@@ -44,7 +44,7 @@ class AuthApi {
     }
   }
 
-  const authApi = new AuthApi("http://api.lkobtseva.nomoredomainsmonster.ru");
+  const authApi = new AuthApi("https://api.lkobtseva.nomoredomainsmonster.ru");
   
   export default authApi;
   
