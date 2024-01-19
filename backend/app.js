@@ -20,7 +20,7 @@ app.use(cors());
 app.use(bodyParser.json());
 const { validationCreateUser, validationLogin } = require('./middlewares/validation');
 
-const { createUser, login } = require('./controllers/users');
+const { createUsers, login } = require('./controllers/users');
 
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000,
@@ -30,7 +30,7 @@ const limiter = rateLimit({
 });
 app.use(requestLogger); // request
 app.post('/signin', validationLogin, login);
-app.post('/signup', validationCreateUser, createUser);
+app.post('/signup', validationCreateUser, createUsers);
 app.use(auth);
 app.get('/crash-test', () => {
   setTimeout(() => {
@@ -48,9 +48,7 @@ async function connect() {
     await mongoose.connect(MONGO_URL, {
       useNewUrlParser: true,
     });
-    console.log(`App connected ${MONGO_URL}`);
     await app.listen(PORT);
-    console.log(`App listening on port ${PORT}`);
   } catch (err) {
     console.log(err);
   }
