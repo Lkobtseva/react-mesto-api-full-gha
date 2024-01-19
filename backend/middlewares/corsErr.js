@@ -1,6 +1,10 @@
 const allowedCors = [
-  'domainname.students.nomoredomains.club',
-  'domainname.students.nomoredomains.club',
+  'https://lkobtseva.nomoredomainsmonster.ru/sign-up',
+  'http://lkobtseva.nomoredomainsmonster.ru/sign-up',
+  'https://praktikum.tk',
+  'http://praktikum.tk',
+  'localhost:3000',
+  'http://localhost:3000',
 ];
 
 module.exports = (req, res, next) => {
