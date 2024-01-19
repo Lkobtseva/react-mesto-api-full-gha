@@ -40,8 +40,8 @@ app.get('/crash-test', () => {
 app.use(router);
 app.use(helmet());
 app.use(limiter);
-app.use(errorLogger); // errors
-app.use(corsErr); // cors
+app.use(errorLogger);
+app.use(corsErr);
 async function connect() {
   try {
     await mongoose.set('strictQuery', false);
