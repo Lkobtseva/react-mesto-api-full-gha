@@ -1,4 +1,4 @@
-/*const { celebrate, Joi } = require('celebrate');
+/* const { celebrate, Joi } = require('celebrate');
 const isUrl = require('validator/lib/isURL');
 const BadRequest = require('../errors/badRequest'); // code 400
 
@@ -66,4 +66,4 @@ module.exports.validationCardById = celebrate({
   params: Joi.object().keys({
     cardId: Joi.string().required().custom(validationID),
   }),
-});*/
+}); */

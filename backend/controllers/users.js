@@ -1,14 +1,15 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const BadRequestError = require('../errors/badRequestError');
-const NotFoundError = require('../errors/notFoundError');
-const ConflictError = require('../errors/СonflictError.js');
-
 const { Joi } = require('celebrate');
 const http2 = require('node:http2');
+const BadRequestError = require('../errors/badRequestError');
+const NotFoundError = require('../errors/notFoundError');
+const ConflictError = require('../errors/СonflictError');
+
 const User = require('../models/user');
 const { joiIsUrlValid } = require('../utils/isUrlValid');
+
 const { NODE_ENV, JWT_SECRET } = process.env;
 const { HTTP_STATUS_CREATED, HTTP_STATUS_OK } = http2.constants;
 
@@ -99,7 +100,7 @@ module.exports.login = (req, res, next) => {
   const { email, password } = req.body;
   return User.findUserByCredentials(email, password)
     .then((user) => {
-      const token = jwt.sign({ _id: user._id }, NODE_ENV === 'production' ? JWT_SECRET : 'dev-secret-key', {expiresIn: '7d'})
+      const token = jwt.sign({ _id: user._id }, NODE_ENV === 'production' ? JWT_SECRET : 'dev-secret-key', { expiresIn: '7d' });
       res.status(HTTP_STATUS_OK).send({ token });
     })
     .catch((err) => {

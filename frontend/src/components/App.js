@@ -200,7 +200,7 @@ useEffect(() => {
         })
         .catch((err) => console.log(err));
     }
-  }, []);
+  }, [navigate]);
 
   useEffect(() => {
     if (isLoggedIn) navigate("/");
