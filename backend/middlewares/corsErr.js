@@ -1,11 +1,14 @@
 const allowedCors = [
   'https://lkobtseva.nomoredomainsmonster.ru',
   'http://lkobtseva.nomoredomainsmonster.ru',
+  'https://api.lkobtseva.nomoredomainsmonster.ru',
+  'http://api.lkobtseva.nomoredomainsmonster.ru',
   'https://praktikum.tk',
   'http://praktikum.tk',
   'localhost:3000',
   'http://localhost:3000',
   '*',
+
 ];
 
 module.exports = (req, res, next) => {
