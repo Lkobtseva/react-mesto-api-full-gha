@@ -94,7 +94,7 @@ class Api {
     }
 }
 const api = new Api({
-    url: "http://api.lkobtseva.nomoredomainsmonster.ru",
+    url: "https://api.lkobtseva.nomoredomainsmonster.ru",
 });
 
 export default api;
