@@ -29,7 +29,7 @@ function EditProfilePopup({ onUpdateAvatar, closeAllPopups, isOpen, onClose }) {
       setpProfileName(name);
       setProfileAbout(about);
     }
-  }, [isOpen, currentUser]);
+  }, [isOpen, currentUser, name, about]);
   return (
     <PopupWithForm
       isOpen={isOpen}

@@ -9,8 +9,8 @@
 
 ## Ссылки на проект
 
-IP-адрес x.x.x.x
+IP-адрес 51.250.73.27
 
-Frontend https://...
+Frontend https://lkobtseva.nomoredomainsmonster.ru
 
-Backend https://...
+Backend https://api.lkobtseva.nomoredomainsmonster.ru
