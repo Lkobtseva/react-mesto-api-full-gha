@@ -9,7 +9,7 @@
 
 ## Ссылки на проект
 
-IP-адрес 51.250.73.27
+IP 51.250.73.27
 
 Frontend https://lkobtseva.nomoredomainsmonster.ru
 
