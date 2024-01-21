@@ -1,6 +1,7 @@
 const allowedCors = [
   'https://lkobtseva.nomoredomainsmonster.ru',
   'http://lkobtseva.nomoredomainsmonster.ru',
+  'https://lkobtseva.nomoredomainsmonster.ru',
   'https://api.lkobtseva.nomoredomainsmonster.ru',
   'http://api.lkobtseva.nomoredomainsmonster.ru',
   'https://praktikum.tk',
