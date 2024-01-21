@@ -34,9 +34,11 @@ app.get('/crash-test', () => {
     throw new Error('Сервер сейчас упадёт');
   }, 0);
 });
-app.use(router);
+
 app.use(helmet());
 app.use(limiter);
+
+app.use(router);
 app.use(errorLogger);
 app.use(corsErr);
 async function connect() {
