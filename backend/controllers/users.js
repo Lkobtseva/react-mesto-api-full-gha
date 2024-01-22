@@ -65,12 +65,14 @@ module.exports.updateAvatar = (req, res, next) => {
     });
 };
 // текущий пользователь
-module.exports.getCurrentUser = (req, res) => {
+module.exports.getCurrentUser = (req, res, next) => {
   userSchema.findById(req.user._id)
     .then((user) => {
-      if (!user) {
-        throw new NotFound('Пользователь не найден');
-      }
       res.status(200).send(user);
+    })
+    .catch((err) => {
+      if (err.message === 'NotFound') {
+        next(new NotFound('Пользователь не найден'));
+      } else next(err);
     });
 };
