@@ -23,3 +23,10 @@
     ```
 6. **Проверка работы проекта**: Откройте веб-браузер и перейдите по адресу `http://localhost:3000` для проверки работоспособности проекта.
 
+## Ссылки на проект
+
+IP 51.250.73.27
+
+Frontend https://lkobtseva.nomoredomainsmonster.ru
+
+Backend https://api.lkobtseva.nomoredomainsmonster.ru
