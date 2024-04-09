@@ -6,7 +6,7 @@
 ### Шаги установки
 1. **Клонирование репозитория**: Склонируйте репозиторий с GitHub на ваш локальный компьютер. Для этого выполните следующую команду в терминале:
     ```
-    git clone https://github.com/Lkobtseva//react-mesto-api-full-gha.git
+    git clone https://github.com/Lkobtseva/react-mesto-api-full-gha.git
     ```
 2. **Переход в директорию проекта**: Перейдите в директорию проекта, используя команду:
     ```
